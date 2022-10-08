@@ -2,11 +2,11 @@ public class TipCalculator {
 
     // instance variables
      int numPeople;
-     double tipPercentage;
+     int tipPercentage;
      double totalBillBeforeTip;
 
     // constructor
-    public TipCalculator(int numPeople, double tipPercentage){
+    public TipCalculator(int numPeople, int tipPercentage){
         this.numPeople = numPeople;
         this.tipPercentage = tipPercentage;
         totalBillBeforeTip = 0.0;
@@ -17,7 +17,7 @@ public class TipCalculator {
         return totalBillBeforeTip;
     }
 
-    public double gettipPercentage(){
+    public int gettipPercentage(){
         return tipPercentage;
     }
 
@@ -26,7 +26,7 @@ public class TipCalculator {
     }
 
     public double tipAmount(){
-        return totalBillBeforeTip * (tipPercentage * 100);
+        return (totalBillBeforeTip * tipPercentage) / 100;
     }
 
     public double totalBill(){
@@ -44,10 +44,5 @@ public class TipCalculator {
     public double perPersonTotalCost(){
         return totalBill() / numPeople;
     }
-
-
-
-
-
 
 }
